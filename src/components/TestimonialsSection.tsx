@@ -3,25 +3,28 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Mateusz K.",
-    role: "Kierowca od 8 miesięcy",
-    text: "Szukałem elastycznej pracy i trafiłem na Wiewiór Partners. Auto dostałem w 2 dni, warunki jasne od początku. Polecam każdemu!",
+    name: "Natalia",
+    role: "Pracownik",
+    date: "13.04.2026",
+    text: "Spokojnie można sobie dorobić do swojego etatu w weekendy albo wolne dni 😇",
   },
   {
-    name: "Oksana M.",
-    role: "Kierowczyni od 4 miesięcy",
-    text: "Przyjechałam z Ukrainy i firma pomogła mi ze wszystkimi formalnościami. Wsparcie 24/7 naprawdę działa. Czuję się bezpiecznie.",
+    name: "KrupierGin",
+    role: "Pracownik",
+    date: "03.02.2026",
+    text: "Niedługo minie rok w tej firmie i jestem bardzo zadowolony; można się pośmiać, pożartować. Jak są trudności to jest pomoc i ludzkie podejście.",
   },
   {
-    name: "Paweł S.",
-    role: "Kierowca od roku",
-    text: "Wcześniej jeździłem dla innego partnera — tu warunki są dużo lepsze. 60% obrotu, zero kaucji i auto w świetnym stanie.",
+    name: "Pracownik",
+    role: "Pracownik",
+    date: "14.05.2025",
+    text: "Najlepszy partner Uber we Wrocławiu, pomagają z wszystkimi dokumentami, pieniądze zawsze na czas. Nowe samochody jeszcze pachną nowością. POLECAM!!!",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-secondary/20">
+    <section id="opinie" className="section-padding bg-secondary/20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,12 +35,12 @@ const TestimonialsSection = () => {
           <span className="text-primary text-sm font-semibold uppercase tracking-widest mb-3 block">
             Opinie
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Zaufali nam <span className="text-gradient">kierowcy</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Zaufali nam <span className="text-gradient">kierowcy Uber i Bolt we Wrocławiu</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
@@ -55,7 +58,9 @@ const TestimonialsSection = () => {
               <p className="text-secondary-foreground leading-relaxed mb-6 text-sm">"{t.text}"</p>
               <div>
                 <p className="font-heading font-semibold text-sm">{t.name}</p>
-                <p className="text-muted-foreground text-xs">{t.role}</p>
+                <p className="text-muted-foreground text-xs">
+                  {t.role} · {t.date}
+                </p>
               </div>
             </motion.div>
           ))}

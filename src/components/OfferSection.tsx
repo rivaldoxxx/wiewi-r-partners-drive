@@ -50,11 +50,11 @@ const OfferSection = () => {
           <span className="text-primary text-sm font-semibold uppercase tracking-widest mb-3 block">
             Oferta
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Wybierz wariant <span className="text-gradient">współpracy</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Wybierz wariant <span className="text-gradient">pracy kierowcy</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Masz auto? Świetnie. Nie masz? Damy Ci Toyotę Corollę. W obu przypadkach wygrywasz.
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
+            Masz auto? Świetnie — jeździsz swoim i zarabiasz więcej. Nie masz? Damy Ci Toyotę Corollę bez kaucji. W obu przypadkach wygrywasz.
           </p>
         </motion.div>
 

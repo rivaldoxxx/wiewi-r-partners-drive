@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
   Car, Fuel, Shield, Wrench, Calendar, Wallet,
-  HeartHandshake, FileCheck, BadgeCheck, Clock
+  HeartHandshake, FileCheck, Clock
 } from "lucide-react";
 
 const benefits = [
@@ -14,8 +14,22 @@ const benefits = [
   { icon: Clock, title: "Tygodniowe wypłaty", desc: "Przejrzysty system — pieniądze co tydzień." },
   { icon: FileCheck, title: "Legalne zatrudnienie", desc: "Umowa, formalności i badania — załatwiamy." },
   { icon: HeartHandshake, title: "Wsparcie 24/7", desc: "Zawsze masz do kogo zadzwonić." },
-  { icon: BadgeCheck, title: "Bez ukrytych kosztów", desc: "Zero niespodzianek — jasne warunki od startu." },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+};
 
 const BenefitsSection = () => {
   return (
@@ -30,23 +44,26 @@ const BenefitsSection = () => {
           <span className="text-primary text-sm font-semibold uppercase tracking-widest mb-3 block">
             Korzyści
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Wszystko, czego potrzebujesz do <span className="text-gradient">zarabiania</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Wszystko, czego potrzebujesz do <span className="text-gradient">zarabiania jako kierowca</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Zapewniamy auto, paliwo, ubezpieczenie i pełne wsparcie. Ty skupiasz się na jeździe i zarabianiu.
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+            Zapewniamy firmowe auto, paliwo, ubezpieczenie i pełne wsparcie operacyjne. Ty skupiasz się na jeździe i zarabianiu na Uberze, Bolcie i FreeNow we Wrocławiu.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-          {benefits.map((b, i) => (
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto"
+        >
+          {benefits.map((b) => (
             <motion.div
               key={b.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 card-glow"
+              variants={itemVariants}
+              className="group p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors duration-300 card-glow"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <b.icon className="w-5 h-5 text-primary" />
@@ -55,7 +72,7 @@ const BenefitsSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

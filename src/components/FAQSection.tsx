@@ -8,35 +8,35 @@ import {
 
 const faqs = [
   {
-    q: "Czy potrzebuję doświadczenia jako kierowca?",
-    a: "Nie! Wystarczy prawo jazdy kat. B. Pomagamy Ci przejść cały proces — od badań lekarskich po aktywację konta na platformach.",
+    q: "Czy potrzebuję doświadczenia jako kierowca Uber lub Bolt?",
+    a: "Nie! Wystarczy prawo jazdy kat. B. Wiewiór Partners pomaga Ci przejść cały proces — od badań lekarskich po aktywację konta na platformach Uber, Bolt i FreeNow.",
   },
   {
-    q: "Ile mogę zarabiać?",
-    a: "Zarobki zależą od liczby przepracowanych godzin. Nasi kierowcy zarabiają nawet kilka tysięcy złotych miesięcznie przy elastycznym grafiku. Otrzymujesz do 60% obrotu.",
+    q: "Ile mogę zarabiać jako kierowca Uber we Wrocławiu?",
+    a: "Zarobki zależą od liczby przepracowanych godzin. Nasi kierowcy zarabiają nawet kilka tysięcy złotych miesięcznie przy elastycznym grafiku. Otrzymujesz do 60% obrotu z platform.",
   },
   {
-    q: "Czy muszę wpłacać kaucję za auto?",
-    a: "Nie. Nie pobieramy kaucji. To jedna z naszych kluczowych zasad — zero ukrytych kosztów.",
+    q: "Czy muszę wpłacać kaucję za firmowe auto?",
+    a: "Nie. Wiewiór Partners nie pobiera kaucji. To jedna z naszych kluczowych zasad — zero ukrytych kosztów od pierwszego dnia.",
   },
   {
-    q: "Jak szybko mogę zacząć?",
+    q: "Jak szybko mogę zacząć pracę jako kierowca Bolt we Wrocławiu?",
     a: "Nawet w 48 godzin od pierwszego kontaktu. Pomagamy z formalnościami i dostarczamy auto gotowe do jazdy.",
   },
   {
-    q: "Czy mogę jeździć własnym autem?",
+    q: "Czy mogę jeździć własnym autem na platformach Uber lub Bolt?",
     a: "Tak! Oferujemy współpracę zarówno na naszych autach (Toyota Corolla), jak i na Twoim własnym samochodzie — z jeszcze lepszymi warunkami rozliczenia.",
   },
   {
-    q: "Czy zatrudniacie cudzoziemców?",
+    q: "Czy zatrudniacie cudzoziemców — kierowców Uber we Wrocławiu?",
     a: "Tak, pomagamy z wszystkimi formalnościami, w tym z dokumentami potrzebnymi do legalnej pracy w Polsce.",
   },
   {
-    q: "Kto pokrywa koszty paliwa i serwisu?",
-    a: "My! Paliwo, ubezpieczenie, serwis, naprawy — to wszystko po naszej stronie.",
+    q: "Kto pokrywa koszty paliwa i serwisu auta?",
+    a: "Wiewiór Partners! Paliwo, ubezpieczenie OC/AC/NNW, serwis, naprawy — to wszystko po naszej stronie.",
   },
   {
-    q: "Jak często wypłacane są pieniądze?",
+    q: "Jak często wypłacane są zarobki kierowcy?",
     a: "Wypłaty realizujemy co tydzień. System rozliczeń jest w pełni przejrzysty.",
   },
 ];
@@ -54,8 +54,8 @@ const FAQSection = () => {
           <span className="text-primary text-sm font-semibold uppercase tracking-widest mb-3 block">
             FAQ
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Najczęściej zadawane <span className="text-gradient">pytania</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Pytania o pracę kierowcy <span className="text-gradient">Uber i Bolt we Wrocławiu</span>
           </h2>
         </motion.div>
 
