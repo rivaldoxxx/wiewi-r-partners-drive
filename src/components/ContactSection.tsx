@@ -15,15 +15,15 @@ const ContactSection = () => {
           <span className="text-primary text-sm font-semibold uppercase tracking-widest mb-3 block">
             Kontakt
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Gotowy, żeby <span className="text-gradient">zacząć zarabiać?</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
             Skontaktuj się z nami — odpowiemy w ciągu kilku godzin. Pomożemy Ci ruszyć w trasę nawet w 48h.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -101,22 +101,27 @@ const ContactSection = () => {
                 Zadzwoń do nas — chętnie odpowiemy na wszystkie pytania i pomożemy Ci zacząć.
               </p>
               <a
-                href="tel:+48123456789"
+                href="tel:+48665660610"
                 className="flex items-center gap-3 text-primary font-heading font-bold text-lg hover:underline"
               >
                 <Phone className="w-5 h-5" />
-                +48 123 456 789
+                +48 665 660 610
               </a>
             </div>
 
             <div className="p-6 rounded-2xl bg-card border border-border card-glow">
               <h3 className="font-heading font-semibold mb-3">Napisz do nas</h3>
               <div className="space-y-3">
-                <a href="mailto:kontakt@wiewiorpartners.pl" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:biuro@wiewiorpartners.pl" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="w-4 h-4 text-primary" />
-                  kontakt@wiewiorpartners.pl
+                  biuro@wiewiorpartners.pl
                 </a>
-                <a href="#" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a
+                  href="https://wa.me/48665660610"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   <MessageCircle className="w-4 h-4 text-primary" />
                   WhatsApp
                 </a>
@@ -129,7 +134,8 @@ const ContactSection = () => {
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
                 <div>
                   <p>Wiewiór Partners</p>
-                  <p>Wrocław, Dolnośląskie</p>
+                  <p>ul. Muchoborska 14/204A</p>
+                  <p>54-424 Wrocław</p>
                 </div>
               </div>
             </div>

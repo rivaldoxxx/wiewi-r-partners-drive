@@ -16,6 +16,7 @@ const Footer = () => {
             <a href="#oferta" className="hover:text-foreground transition-colors">Oferta</a>
             <a href="#korzysci" className="hover:text-foreground transition-colors">Korzyści</a>
             <a href="#jak-zaczac" className="hover:text-foreground transition-colors">Jak zacząć</a>
+            <a href="#opinie" className="hover:text-foreground transition-colors">Opinie</a>
             <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
             <a href="#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
           </div>

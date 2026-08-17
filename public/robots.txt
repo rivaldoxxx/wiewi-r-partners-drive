@@ -1,3 +1,6 @@
+# Wiewiór Partners — robots.txt
+# https://wiewiorpartners.pl
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +13,23 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI crawlers — allowed for citation/GEO visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: *
 Allow: /
+
+Sitemap: https://wiewiorpartners.pl/sitemap.xml

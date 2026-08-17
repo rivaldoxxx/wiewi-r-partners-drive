@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Wiewiór Partners">
+  <rect width="64" height="64" rx="14" fill="#a4e633"/>
+  <path d="M15 19 L24.5 45.5 L32 30.5 L39.5 45.5 L49 19"
+        fill="none" stroke="#0e1315" stroke-width="7.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

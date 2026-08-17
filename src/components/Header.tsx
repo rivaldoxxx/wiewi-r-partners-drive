@@ -7,8 +7,9 @@ const navLinks = [
   { label: "Oferta", href: "#oferta" },
   { label: "Korzyści", href: "#korzysci" },
   { label: "Jak zacząć", href: "#jak-zaczac" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Opinie", href: "#opinie" },
   { label: "Kontakt", href: "#kontakt" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const Header = () => {
@@ -35,9 +36,9 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+48123456789" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <a href="tel:+48665660610" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-4 h-4" />
-            <span>+48 123 456 789</span>
+            <span>+48 665 660 610</span>
           </a>
           <Button asChild size="sm">
             <a href="#kontakt">Aplikuj teraz</a>
