@@ -5,51 +5,129 @@
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
+@import '@fontsource/instrument-serif/400.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 220 20% 7%;
-    --foreground: 0 0% 95%;
+  /* ─────────────────────────────────────────────────────────────
+     Motyw A — NOCNY ORZECH (domyślny)
+     Ciepły, orzechowy grafit + intensywny pomarańcz futra wiewiórki.
+     ───────────────────────────────────────────────────────────── */
+  :root,
+  [data-theme="nocny-orzech"] {
+    --background: 24 14% 7%;
+    --foreground: 30 20% 96%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 24 12% 11%;
+    --card-foreground: 30 20% 96%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 24 12% 11%;
+    --popover-foreground: 30 20% 96%;
 
-    --primary: 82 78% 55%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 24 45% 8%;
 
-    --secondary: 220 14% 16%;
-    --secondary-foreground: 0 0% 85%;
+    --secondary: 24 10% 16%;
+    --secondary-foreground: 30 12% 86%;
 
-    --muted: 220 14% 14%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 24 10% 14%;
+    --muted-foreground: 26 10% 60%;
 
-    --accent: 82 78% 55%;
-    --accent-foreground: 220 20% 7%;
+    --accent: 38 92% 58%;
+    --accent-foreground: 24 45% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 30 20% 96%;
 
-    --border: 220 14% 18%;
-    --input: 220 14% 18%;
-    --ring: 82 78% 55%;
+    --border: 24 10% 18%;
+    --input: 24 10% 18%;
+    --ring: 24 95% 53%;
 
     --radius: 0.75rem;
+    --radius-button: calc(var(--radius) - 2px);
 
-    --surface-elevated: 220 16% 12%;
-    --glow-primary: 82 78% 55%;
+    --surface-elevated: 24 12% 14%;
+    --glow-primary: 24 95% 53%;
+
+    /* typografia */
+    --font-heading: "Space Grotesk";
+    --heading-weight: 700;
+    --heading-tracking: -0.02em;
+    --heading-leading: 1.06;
+
+    /* efekty */
+    --gradient-to: 38 92% 58%;
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.18), 0 0 90px hsl(var(--primary) / 0.07);
+    --shadow-card: 0 0 0 1px hsl(var(--border)), 0 8px 32px hsl(0 0% 0% / 0.4);
+    --icon-stroke: 2;
+
+    /* hero */
+    --hero-filter: saturate(1.05);
+    --hero-opacity: 1;
   }
 
-  .dark {
-    --background: 220 20% 7%;
-    --foreground: 0 0% 95%;
+  /* ─────────────────────────────────────────────────────────────
+     Motyw B — TERAKOTA PREMIUM
+     Matowy grafit z brązowym podtonem, przygaszona terakota,
+     piaskowy beż, serifowe nagłówki, duże promienie, zero neonu.
+     ───────────────────────────────────────────────────────────── */
+  [data-theme="terakota"] {
+    --background: 20 10% 11%;
+    --foreground: 30 14% 94%;
+
+    --card: 20 9% 15%;
+    --card-foreground: 30 14% 94%;
+
+    --popover: 20 9% 15%;
+    --popover-foreground: 30 14% 94%;
+
+    --primary: 12 52% 56%;
+    --primary-foreground: 20 30% 10%;
+
+    --secondary: 20 8% 19%;
+    --secondary-foreground: 30 10% 86%;
+
+    --muted: 20 8% 17%;
+    --muted-foreground: 24 8% 62%;
+
+    --accent: 34 34% 76%;
+    --accent-foreground: 20 30% 10%;
+
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 30 14% 94%;
+
+    --border: 20 8% 24%;
+    --input: 20 8% 24%;
+    --ring: 12 52% 56%;
+
+    --radius: 1.25rem;
+    --radius-button: 9999px; /* pill — podpis tego wariantu */
+
+    --surface-elevated: 20 9% 18%;
+    --glow-primary: 12 52% 56%;
+
+    /* typografia — serif w nagłówkach, waga 400 */
+    --font-heading: "Instrument Serif";
+    --heading-weight: 400;
+    --heading-tracking: -0.01em;
+    --heading-leading: 1.05;
+
+    /* efekty — cienie, nie poświata */
+    --gradient-to: 34 34% 76%;
+    --shadow-glow: 0 8px 26px hsl(var(--primary) / 0.28);
+    --shadow-card: inset 0 1px 0 hsl(0 0% 100% / 0.04), 0 10px 28px hsl(0 0% 0% / 0.35);
+    --icon-stroke: 1.5;
+
+    /* hero */
+    --hero-filter: saturate(0.72) sepia(0.16) contrast(0.94);
+    --hero-opacity: 0.9;
   }
+
+  /* Strona jest z natury ciemna w obu wariantach — brak osobnego bloku .dark,
+     żeby motyw systemowy nie odwracał kolorów. */
 }
 
 @layer base {
@@ -63,27 +141,68 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    transition: background-color 260ms ease, color 260ms ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    font-weight: var(--heading-weight);
+    letter-spacing: var(--heading-tracking);
+  }
+
+  h1, h2 {
+    line-height: var(--heading-leading);
+  }
+
+  /* Serif nie potrzebuje bolda — Instrument Serif ma tylko wagę 400, więc
+     `font-bold` z JSX dawałby sztucznie pogrubiony (rozmyty) tekst. */
+  [data-theme="terakota"] h1,
+  [data-theme="terakota"] h2,
+  [data-theme="terakota"] h3,
+  [data-theme="terakota"] h4,
+  [data-theme="terakota"] .font-heading {
+    font-weight: 400;
+  }
+
+  /* Więcej powietrza w treści Terakoty */
+  [data-theme="terakota"] p {
+    line-height: 1.7;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--primary)),
+      hsl(var(--gradient-to))
+    );
   }
 
   .glow-primary {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.15), 0 0 80px hsl(var(--primary) / 0.05);
+    box-shadow: var(--shadow-glow);
   }
 
   .card-glow {
-    box-shadow: 0 0 0 1px hsl(var(--border)), 0 8px 32px hsl(0 0% 0% / 0.4);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Zdjęcie hero dopasowane do palety motywu */
+  .hero-media {
+    filter: var(--hero-filter);
+    opacity: var(--hero-opacity);
   }
 
   .section-padding {
     @apply py-12 sm:py-16 md:py-24 lg:py-32;
   }
 }
+
+/* Poza @layer — klasa `.lucide` jest dodawana w runtime przez lucide-react,
+   więc Tailwind nie widzi jej w źródłach i usunąłby regułę przy purge.
+   Terakota Premium używa cieńszych ikon (1.5), Nocny Orzech domyślnych (2). */
+svg.lucide {
+  stroke-width: var(--icon-stroke);
+}
+

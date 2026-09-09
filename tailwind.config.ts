@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Space Grotesk", "system-ui", "sans-serif"],
+        // Rodzina nagłówków pochodzi z tokena motywu:
+        // Nocny Orzech → Space Grotesk, Terakota Premium → Instrument Serif
+        heading: ["var(--font-heading)", "Space Grotesk", "Georgia", "serif"],
         body: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {

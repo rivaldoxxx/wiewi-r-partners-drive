@@ -15,7 +15,7 @@ const HeroSection = () => {
       {/* ── Desktop: animated right-side image (hidden on mobile) ── */}
       <div className="hidden md:block absolute top-0 bottom-0 right-0 left-[44%] lg:left-[50%] z-0">
         <motion.div
-          className="w-full h-full bg-cover bg-center bg-no-repeat will-change-[clip-path]"
+          className="hero-media w-full h-full bg-cover bg-center bg-no-repeat will-change-[clip-path]"
           role="img"
           aria-label="Kierowca Uber Bolt FreeNow Wrocław — Toyota Corolla Wiewiór Partners"
           style={{ backgroundImage: `url(${heroImg})` }}
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <img
             src={heroImg}
             alt="Kierowca Uber Bolt FreeNow Wrocław — Toyota Corolla Wiewiór Partners"
-            className="w-full h-full object-cover object-[center_20%]"
+            className="hero-media w-full h-full object-cover object-[center_20%]"
             fetchPriority="high"
             decoding="async"
           />

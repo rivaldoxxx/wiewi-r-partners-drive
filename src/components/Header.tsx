@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const navLinks = [
   { label: "Oferta", href: "#oferta" },
@@ -36,6 +37,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
+          <ThemeSwitcher />
           <a href="tel:+48665660610" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-4 h-4" />
             <span>+48 665 660 610</span>
@@ -76,6 +78,12 @@ const Header = () => {
               <Button asChild className="mt-2 w-full">
                 <a href="#kontakt" onClick={() => setMobileOpen(false)}>Aplikuj teraz</a>
               </Button>
+              <div className="pt-2 flex flex-col gap-2">
+                <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                  Kolorystyka
+                </span>
+                <ThemeSwitcher className="self-start" />
+              </div>
             </nav>
           </motion.div>
         )}
