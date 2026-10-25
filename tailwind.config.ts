@@ -73,11 +73,34 @@ export default {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "1" },
         },
+        // Wejście hero w czystym CSS: rusza od razu po wyświetleniu HTML z prerenderingu,
+        // bez czekania na JavaScript (framer-motion trzymał treść w opacity: 0 do hydracji).
+        "hero-fade-up": {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "hero-fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "hero-zoom-in": {
+          from: { opacity: "0", transform: "scale(1.05)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        "hero-reveal": {
+          from: { clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" },
+          to: { clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "hero-fade-up": "hero-fade-up 0.6s ease-out both",
+        "hero-fade-in": "hero-fade-in 0.6s ease-out both",
+        "hero-zoom-in": "hero-zoom-in 0.8s ease-out both",
+        // cubic-bezier odpowiada „circOut” z framer-motion
+        "hero-reveal": "hero-reveal 1.2s cubic-bezier(0, 0.55, 0.45, 1) both",
       },
     },
   },
