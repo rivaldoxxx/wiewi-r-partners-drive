@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const stats = [
   { value: "100+", label: "Kierowców nam zaufało" },
@@ -31,7 +31,7 @@ const TrustBar = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
-            <motion.div
+            <m.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const TrustBar = () => {
             >
               <p className="text-3xl md:text-4xl font-heading font-bold text-primary mb-1">{stat.value}</p>
               <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

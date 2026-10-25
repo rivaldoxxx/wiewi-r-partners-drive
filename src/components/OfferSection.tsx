@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -42,7 +42,7 @@ const OfferSection = () => {
   return (
     <section id="oferta" className="section-padding">
       <div className="container">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -57,11 +57,11 @@ const OfferSection = () => {
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
             Masz auto? Świetnie — jeździsz swoim i zarabiasz więcej. Nie masz? Damy Ci Toyotę Corollę bez kaucji. W obu przypadkach wygrywasz.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
-            <motion.div
+            <m.div
               key={plan.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ const OfferSection = () => {
               >
                 <a href="#kontakt">Aplikuj teraz</a>
               </Button>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

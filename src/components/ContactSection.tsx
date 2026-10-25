@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -65,7 +65,7 @@ const ContactSection = () => {
   return (
     <section id="kontakt" className="section-padding bg-secondary/20">
       <div className="container">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -80,11 +80,11 @@ const ContactSection = () => {
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
             Skontaktuj się z nami — odpowiemy w ciągu kilku godzin. Pomożemy Ci ruszyć w trasę od zaraz.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {/* Form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -167,10 +167,10 @@ const ContactSection = () => {
                 </p>
               )}
             </form>
-          </motion.div>
+          </m.div>
 
           {/* Contact info */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -221,7 +221,7 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

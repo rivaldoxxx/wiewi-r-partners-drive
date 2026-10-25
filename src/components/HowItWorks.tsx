@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PhoneCall, FileText, CarFront, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StepsTimeline } from "@/components/ui/steps";
@@ -29,7 +29,7 @@ const HowItWorks = () => {
   return (
     <section id="jak-zaczac" className="section-padding bg-secondary/20">
       <div className="container">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,9 +44,9 @@ const HowItWorks = () => {
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
             Nie potrzebujesz doświadczenia. Wystarczy 18 lat i polskie prawo jazdy kat. B — całą resztę załatwiamy za Ciebie w 3 krokach.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -54,7 +54,7 @@ const HowItWorks = () => {
           className="mb-16 max-w-5xl mx-auto px-4 md:px-8"
         >
           <StepsTimeline steps={steps} />
-        </motion.div>
+        </m.div>
 
         <div className="text-center">
           <Button asChild size="lg" className="text-base glow-primary">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 interface SocialItem {
@@ -93,7 +93,7 @@ const SocialConnect = () => {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -108,9 +108,9 @@ const SocialConnect = () => {
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Wybierz najwygodniejszy sposób kontaktu — jesteśmy dostępni na wielu platformach
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="relative w-full max-w-3xl mx-auto"
           initial="hidden"
           whileInView="visible"
@@ -126,7 +126,7 @@ const SocialConnect = () => {
           >
             <div className="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8">
               {socialItems.map((item) => (
-                <motion.a
+                <m.a
                   key={item.name}
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
@@ -155,11 +155,11 @@ const SocialConnect = () => {
                   <span className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                     {item.name}
                   </span>
-                </motion.a>
+                </m.a>
               ))}
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

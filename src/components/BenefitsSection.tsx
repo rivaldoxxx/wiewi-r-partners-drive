@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Car, Fuel, Shield, Wrench, Calendar, Wallet,
   HeartHandshake, FileCheck, Clock
@@ -35,7 +35,7 @@ const BenefitsSection = () => {
   return (
     <section id="korzysci" className="section-padding">
       <div className="container">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -50,9 +50,9 @@ const BenefitsSection = () => {
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
             Zapewniamy firmowe auto, paliwo, ubezpieczenie i pełne wsparcie operacyjne. Ty skupiasz się na jeździe i zarabianiu na Uberze, Bolcie i FreeNow we Wrocławiu.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div 
+        <m.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -60,7 +60,7 @@ const BenefitsSection = () => {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto"
         >
           {benefits.map((b) => (
-            <motion.div
+            <m.div
               key={b.title}
               variants={itemVariants}
               className="group p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors duration-300 card-glow"
@@ -70,9 +70,9 @@ const BenefitsSection = () => {
               </div>
               <h3 className="font-heading font-semibold text-base mb-1">{b.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
