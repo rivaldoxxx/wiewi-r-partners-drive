@@ -22,7 +22,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-border mt-8 pt-6 text-center text-xs text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Wiewiór Partners. Wszystkie prawa zastrzeżone.</p>
+          {/* Rok z prerenderingu może się różnić od bieżącego, gdy strona długo nie była budowana. */}
+          <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Wiewiór Partners. Wszystkie prawa zastrzeżone.</p>
         </div>
       </div>
     </footer>

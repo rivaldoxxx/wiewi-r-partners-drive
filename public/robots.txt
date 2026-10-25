@@ -1,5 +1,5 @@
 # Wiewiór Partners — robots.txt
-# https://wiewiorpartners.pl
+# %SITE_URL% podmienia scripts/prerender.mjs przy buildzie.
 
 User-agent: Googlebot
 Allow: /
@@ -32,4 +32,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://wiewiorpartners.pl/sitemap.xml
+Sitemap: %SITE_URL%/sitemap.xml

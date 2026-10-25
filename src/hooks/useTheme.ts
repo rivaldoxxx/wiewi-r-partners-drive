@@ -31,9 +31,16 @@ export const applyTheme = (theme: ThemeId) => {
 export const initTheme = () => applyTheme(readStoredTheme());
 
 export const useTheme = () => {
-  const [theme, setThemeState] = useState<ThemeId>(readStoredTheme);
+  // Pierwszy render musi zgadzać się z HTML z prerenderingu (motyw domyślny),
+  // więc zapisany motyw wczytujemy dopiero po zamontowaniu. <html data-theme> ustawia już initTheme().
+  const [theme, setThemeState] = useState<ThemeId | null>(null);
 
   useEffect(() => {
+    setThemeState(readStoredTheme());
+  }, []);
+
+  useEffect(() => {
+    if (!theme) return;
     applyTheme(theme);
     try {
       window.localStorage.setItem(STORAGE_KEY, theme);
@@ -44,5 +51,5 @@ export const useTheme = () => {
 
   const setTheme = useCallback((next: ThemeId) => setThemeState(next), []);
 
-  return { theme, setTheme, themes: THEMES };
+  return { theme: theme ?? DEFAULT_THEME, setTheme, themes: THEMES };
 };

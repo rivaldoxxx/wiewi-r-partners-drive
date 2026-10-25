@@ -1,62 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Strona główna -->
+<!-- %SITE_URL% i %BUILD_DATE% podmienia scripts/prerender.mjs. Sekcje strony (#oferta, #faq…)
+     to ten sam adres, więc nie dodajemy ich osobno. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wiewiorpartners.pl/</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://wiewiorpartners.pl/"/>
+    <loc>%SITE_URL%/</loc>
+    <lastmod>%BUILD_DATE%</lastmod>
   </url>
-
-  <!-- Sekcja: Oferta -->
-  <url>
-    <loc>https://wiewiorpartners.pl/#oferta</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Sekcja: Korzyści -->
-  <url>
-    <loc>https://wiewiorpartners.pl/#korzysci</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sekcja: Jak zacząć -->
-  <url>
-    <loc>https://wiewiorpartners.pl/#jak-zaczac</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sekcja: Opinie kierowców -->
-  <url>
-    <loc>https://wiewiorpartners.pl/#opinie</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Sekcja: FAQ -->
-  <url>
-    <loc>https://wiewiorpartners.pl/#faq</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Sekcja: Kontakt -->
-  <url>
-    <loc>https://wiewiorpartners.pl/#kontakt</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
 </urlset>
