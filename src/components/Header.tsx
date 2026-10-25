@@ -4,13 +4,14 @@ import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
+// Linki z "/" działają też na podstronach (np. /partner-flotowy-wroclaw).
 const navLinks = [
-  { label: "Oferta", href: "#oferta" },
-  { label: "Korzyści", href: "#korzysci" },
-  { label: "Jak zacząć", href: "#jak-zaczac" },
-  { label: "Opinie", href: "#opinie" },
-  { label: "Kontakt", href: "#kontakt" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Oferta", href: "/#oferta" },
+  { label: "Korzyści", href: "/#korzysci" },
+  { label: "Jak zacząć", href: "/#jak-zaczac" },
+  { label: "Opinie", href: "/#opinie" },
+  { label: "Kontakt", href: "/#kontakt" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="font-heading font-bold text-xl md:text-2xl tracking-tight">
+        <a href="/" className="font-heading font-bold text-xl md:text-2xl tracking-tight">
           <span className="text-foreground">Wiewiór</span>
           <span className="text-primary"> Partners</span>
         </a>
@@ -43,7 +44,7 @@ const Header = () => {
             <span>+48 665 660 610</span>
           </a>
           <Button asChild size="sm">
-            <a href="#kontakt">Aplikuj teraz</a>
+            <a href="/#kontakt">Aplikuj teraz</a>
           </Button>
         </div>
 
@@ -76,7 +77,7 @@ const Header = () => {
                 </a>
               ))}
               <Button asChild className="mt-2 w-full">
-                <a href="#kontakt" onClick={() => setMobileOpen(false)}>Aplikuj teraz</a>
+                <a href="/#kontakt" onClick={() => setMobileOpen(false)}>Aplikuj teraz</a>
               </Button>
               <div className="pt-2 flex flex-col gap-2">
                 <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">

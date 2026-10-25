@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- %SITE_URL% i %BUILD_DATE% podmienia scripts/prerender.mjs. Sekcje strony (#oferta, #faq…)
-     to ten sam adres, więc nie dodajemy ich osobno. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>%SITE_URL%/</loc>
-    <lastmod>%BUILD_DATE%</lastmod>
-  </url>
-</urlset>

@@ -1,7 +1,9 @@
 // Jedno źródło dla sekcji FAQ i danych strukturalnych FAQPage w src/pages/Index.tsx,
 // żeby treść w Google zawsze zgadzała się z tym, co widać na stronie.
 // Pytania odpowiadają frazom z docs/seo/frazy-kluczowe.md (wymagania, zarobki, partner flotowy, badania).
-export const faqs = [
+export type FaqItem = { q: string; a: string };
+
+export const faqs: FaqItem[] = [
   {
     q: "Czym jest partner flotowy Uber i Bolt?",
     a: "To firma, przez którą kierowca jeździ na aplikacjach Uber, Bolt i FreeNow. Partner flotowy załatwia rejestrację, rozlicza przejazdy i wypłaca zarobki, a często daje też auto. Wiewiór Partners jest oficjalnym partnerem flotowym we Wrocławiu: dajemy auto bez kaucji albo rozliczamy Cię, gdy jeździsz własnym samochodem.",

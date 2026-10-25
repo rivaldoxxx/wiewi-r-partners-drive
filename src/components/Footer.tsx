@@ -1,3 +1,5 @@
+import { PARTNER_FLOTOWY_PATH } from "@/lib/routes";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-card/50 py-10">
@@ -19,12 +21,13 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <a href="#oferta" className="hover:text-foreground transition-colors">Oferta</a>
-            <a href="#korzysci" className="hover:text-foreground transition-colors">Korzyści</a>
-            <a href="#jak-zaczac" className="hover:text-foreground transition-colors">Jak zacząć</a>
-            <a href="#opinie" className="hover:text-foreground transition-colors">Opinie</a>
-            <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-            <a href="#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
+            <a href="/#oferta" className="hover:text-foreground transition-colors">Oferta</a>
+            <a href="/#korzysci" className="hover:text-foreground transition-colors">Korzyści</a>
+            <a href="/#jak-zaczac" className="hover:text-foreground transition-colors">Jak zacząć</a>
+            <a href="/#opinie" className="hover:text-foreground transition-colors">Opinie</a>
+            <a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a>
+            <a href="/#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
+            <a href={PARTNER_FLOTOWY_PATH} className="hover:text-foreground transition-colors">Partner flotowy</a>
           </div>
         </div>
         <div className="border-t border-border mt-8 pt-6 text-center text-xs text-muted-foreground">

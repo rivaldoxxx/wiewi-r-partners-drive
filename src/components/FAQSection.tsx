@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import FaqList from "@/components/FaqList";
 import { faqs } from "@/data/faqs";
+import { PARTNER_FLOTOWY_PATH } from "@/lib/routes";
 
 const FAQSection = () => {
   return (
@@ -20,22 +22,15 @@ const FAQSection = () => {
           </h2>
         </motion.div>
 
-        {/* Natywne <details>: odpowiedzi są w HTML także zwinięte, więc widzą je Google i boty AI
-            (Radix Accordion wstawiał treść dopiero po kliknięciu). */}
-        <div className="space-y-3">
-          {faqs.map((faq) => (
-            <details
-              key={faq.q}
-              className="group border border-border rounded-xl px-5 bg-card card-glow open:border-primary/30"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
-                <h3 className="text-left font-heading font-semibold text-sm md:text-base">{faq.q}</h3>
-                <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180" />
-              </summary>
-              <p className="text-muted-foreground text-sm leading-relaxed pb-4">{faq.a}</p>
-            </details>
-          ))}
-        </div>
+        <FaqList items={faqs} />
+
+        <a
+          href={PARTNER_FLOTOWY_PATH}
+          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+        >
+          Czym jest partner flotowy i jak go wybrać?
+          <ArrowRight className="w-4 h-4" />
+        </a>
       </div>
     </section>
   );

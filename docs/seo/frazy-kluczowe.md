@@ -9,7 +9,7 @@ Liczby to wyszukiwania miesięcznie w całej Polsce. Trudność to skala 0–100
 | bolt kierowca | 480 | 0 | strona główna i poradnik |
 | uber kierowca | 480 | 0 | strona główna i poradnik |
 | praca kierowca wrocław | 390 | 0 | strona główna (już jest w tytule) |
-| bolt partner flotowy | 260 | 7 | sekcja lub podstrona „Czym jest partner flotowy” |
+| bolt partner flotowy | 260 | 7 | podstrona „Partner flotowy Uber i Bolt we Wrocławiu” — **zrobione:** `/partner-flotowy-wroclaw` |
 | uber partner flotowy | 140 | 10 | to samo |
 | kierowca bolt wymagania | 140 | 0 | poradnik i FAQ |
 | kierowca bolt zarobki | 140 | 0 | podstrona o zarobkach |

@@ -2,8 +2,17 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import type { HelmetServerState } from "react-helmet-async";
 import { AppRoutes, Providers } from "./App.tsx";
+import { PARTNER_FLOTOWY_PATH } from "./lib/routes";
 
 export { SITE_URL } from "./lib/site";
+
+// Strony zapisywane przez scripts/prerender.mjs. Te z sitemap: true trafiają do sitemap.xml.
+// Pliki .html serwujemy bez rozszerzenia dzięki "cleanUrls" w vercel.json.
+export const PAGES = [
+  { url: "/", file: "index.html", sitemap: true },
+  { url: PARTNER_FLOTOWY_PATH, file: `${PARTNER_FLOTOWY_PATH.slice(1)}.html`, sitemap: true },
+  { url: "/404", file: "404.html", sitemap: false },
+];
 
 /** Renderuje stronę do HTML dla scripts/prerender.mjs. Zwraca treść #root i tagi do <head>. */
 export function render(url: string) {

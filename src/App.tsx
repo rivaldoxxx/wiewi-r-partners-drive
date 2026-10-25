@@ -7,6 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import PartnerFlotowy from "./pages/PartnerFlotowy.tsx";
+import { PARTNER_FLOTOWY_PATH } from "./lib/routes";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,7 @@ export const Providers = ({ children, helmetContext }: { children: ReactNode; he
 export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
+    <Route path={PARTNER_FLOTOWY_PATH} element={<PartnerFlotowy />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );

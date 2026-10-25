@@ -12,14 +12,15 @@ import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 import { faqs } from "@/data/faqs";
+import { faqPageSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 
 const Index = () => {
   const siteUrl = SITE_URL;
   const pageUrl = `${siteUrl}/`;
-  // Frazy z docs/seo/frazy-kluczowe.md: „bolt/uber partner flotowy” i „kierowca Uber/Bolt”.
-  // „praca kierowca wrocław” zajmują portale z ogłoszeniami, więc jej nie gonimy.
-  const title = "Partner flotowy Uber i Bolt Wrocław — praca kierowcy | Wiewiór Partners";
+  // Frazy z docs/seo/frazy-kluczowe.md: strona główna celuje w „kierowca Uber/Bolt”,
+  // a „partner flotowy” ma własną podstronę (src/pages/PartnerFlotowy.tsx), żeby nie konkurowały.
+  const title = "Kierowca Uber i Bolt we Wrocławiu — praca od zaraz | Wiewiór Partners";
   const description =
     "Praca kierowcy Uber, Bolt i FreeNow we Wrocławiu. Oficjalny partner flotowy: auto bez kaucji, paliwo i ubezpieczenie w cenie, do 60% obrotu. Start od zaraz!";
 
@@ -141,15 +142,7 @@ const Index = () => {
     },
   };
 
-  const schemaFAQ = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map(({ q, a }) => ({
-      "@type": "Question",
-      name: q,
-      acceptedAnswer: { "@type": "Answer", text: a },
-    })),
-  };
+  const schemaFAQ = faqPageSchema(faqs);
 
   return (
     <>
