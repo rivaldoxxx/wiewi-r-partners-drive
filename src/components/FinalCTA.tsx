@@ -18,7 +18,7 @@ const FinalCTA = () => {
             Nie czekaj. Zacznij zarabiać <span className="text-gradient">już dziś.</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg mb-8 leading-relaxed">
-            Setki kierowców we Wrocławiu już nam zaufało. Dołącz do nich — auto, paliwo i wsparcie czekają.
+            Ponad 100 kierowców we Wrocławiu już nam zaufało. Dołącz do nich — auto, paliwo i wsparcie czekają.
           </p>
           <Button asChild size="lg" className="text-base gap-2 glow-primary">
             <a href="#kontakt">

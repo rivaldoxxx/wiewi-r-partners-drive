@@ -11,6 +11,12 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm mt-1">
               Partner flotowy Uber, Bolt, FreeNow — Wrocław
             </p>
+            <p className="text-muted-foreground text-sm mt-1">
+              ul. Muchoborska 14/204A, 54-424 Wrocław ·{" "}
+              <a href="tel:+48665660610" className="hover:text-foreground transition-colors">
+                +48 665 660 610
+              </a>
+            </p>
           </div>
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
             <a href="#oferta" className="hover:text-foreground transition-colors">Oferta</a>

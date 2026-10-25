@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Clock, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-car.jpg";
+import heroImg from "@/assets/hero-car.webp";
 
 const badges = [
   { icon: Banknote, label: "Do 60% obrotu" },
@@ -39,7 +39,8 @@ const HeroSection = () => {
             src={heroImg}
             alt="Kierowca Uber Bolt FreeNow Wrocław — Toyota Corolla Wiewiór Partners"
             className="hero-media w-full h-full object-cover object-[center_20%]"
-            fetchPriority="high"
+            // React 18 nie zna jeszcze propsa fetchPriority, więc podajemy atrybut HTML wprost.
+            {...{ fetchpriority: "high" }}
             decoding="async"
           />
         </motion.div>
@@ -70,7 +71,8 @@ const HeroSection = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-4 sm:mb-6"
           >
             Zarabiaj jako kierowca{" "}
-            <span className="text-gradient">Uber, Bolt i FreeNow</span>
+            <span className="text-gradient">Uber, Bolt i FreeNow</span>{" "}
+            we Wrocławiu
           </motion.h1>
 
           <motion.p

@@ -60,7 +60,7 @@ const socialItems: SocialItem[] = [
   },
   {
     name: 'Mapa',
-    href: 'https://maps.google.com/?q=Wrocław',
+    href: 'https://www.google.com/maps/search/?api=1&query=Muchoborska+14%2C+54-424+Wroc%C5%82aw',
     icon: <MapPin className="h-7 w-7 text-white" />,
     hoverBg: '#4285F4',
     hoverShadow: 'rgba(66, 133, 244, 0.6)',
