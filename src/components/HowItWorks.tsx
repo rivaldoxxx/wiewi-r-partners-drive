@@ -38,10 +38,10 @@ const HowItWorks = () => {
             Jak zacząć
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            3 proste kroki do <span className="text-gradient">pracy kierowcy we Wrocławiu</span>
+            Jak zostać kierowcą <span className="text-gradient">Ubera i Bolta we Wrocławiu</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
-            Nie potrzebujesz doświadczenia. Wystarczy prawo jazdy kat. B — całą resztę załatwiamy za Ciebie.
+            Nie potrzebujesz doświadczenia. Wystarczy 18 lat i polskie prawo jazdy kat. B — całą resztę załatwiamy za Ciebie w 3 krokach.
           </p>
         </motion.div>
 

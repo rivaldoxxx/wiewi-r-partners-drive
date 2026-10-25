@@ -1,13 +1,26 @@
 // Jedno źródło dla sekcji FAQ i danych strukturalnych FAQPage w src/pages/Index.tsx,
 // żeby treść w Google zawsze zgadzała się z tym, co widać na stronie.
+// Pytania odpowiadają frazom z docs/seo/frazy-kluczowe.md (wymagania, zarobki, partner flotowy, badania).
 export const faqs = [
   {
-    q: "Czy potrzebuję doświadczenia jako kierowca Uber lub Bolt?",
-    a: "Nie! Wystarczy prawo jazdy kat. B. Wiewiór Partners pomaga Ci przejść cały proces — od badań lekarskich po aktywację konta na platformach Uber, Bolt i FreeNow.",
+    q: "Czym jest partner flotowy Uber i Bolt?",
+    a: "To firma, przez którą kierowca jeździ na aplikacjach Uber, Bolt i FreeNow. Partner flotowy załatwia rejestrację, rozlicza przejazdy i wypłaca zarobki, a często daje też auto. Wiewiór Partners jest oficjalnym partnerem flotowym we Wrocławiu: dajemy auto bez kaucji albo rozliczamy Cię, gdy jeździsz własnym samochodem.",
   },
   {
-    q: "Ile mogę zarabiać jako kierowca Uber we Wrocławiu?",
-    a: "Zarobki zależą od liczby przepracowanych godzin. Nasi kierowcy zarabiają nawet kilka tysięcy złotych miesięcznie przy elastycznym grafiku. Otrzymujesz do 60% obrotu z platform.",
+    q: "Jakie są wymagania, żeby zostać kierowcą Uber lub Bolt?",
+    a: "Musisz mieć ukończone 18 lat, polskie prawo jazdy kat. B, aktualne zaświadczenie o niekaralności (nie starsze niż 30 dni) oraz zrobić badania lekarskie i psychologiczne. Doświadczenie jako kierowca nie jest potrzebne. W każdym kroku pomagamy.",
+  },
+  {
+    q: "Czy potrzebuję doświadczenia jako kierowca Uber lub Bolt?",
+    a: "Nie! Wystarczy polskie prawo jazdy kat. B. Wiewiór Partners pomaga Ci przejść cały proces — od badań lekarskich po aktywację konta na platformach Uber, Bolt i FreeNow.",
+  },
+  {
+    q: "Ile zarabia kierowca Uber i Bolt we Wrocławiu?",
+    a: "Zarobki zależą od liczby przepracowanych godzin. Nasi kierowcy zarabiają od około 3500 do 10 000 zł miesięcznie. Otrzymujesz do 60% obrotu z platform, a do tego cotygodniowy bonus.",
+  },
+  {
+    q: "Ile kosztują badania lekarskie i psychologiczne kierowcy?",
+    a: "Według przepisów badanie lekarskie kosztuje maksymalnie 200 zł, a badanie psychologiczne maksymalnie 150 zł. Koszty badań Ci zwracamy.",
   },
   {
     q: "Czy muszę wpłacać kaucję za firmowe auto?",
@@ -23,7 +36,7 @@ export const faqs = [
   },
   {
     q: "Czy zatrudniacie cudzoziemców — kierowców Uber we Wrocławiu?",
-    a: "Tak, pomagamy z wszystkimi formalnościami, w tym z dokumentami potrzebnymi do legalnej pracy w Polsce.",
+    a: "Tak. Cudzoziemiec potrzebuje dokumentu pobytu z prawem do pracy w Polsce, polskiego prawa jazdy (zagraniczne trzeba wymienić) oraz zaświadczenia o niekaralności z kraju pochodzenia z tłumaczeniem przysięgłym. Pomagamy z wszystkimi formalnościami.",
   },
   {
     q: "Kto pokrywa koszty paliwa i serwisu auta?",

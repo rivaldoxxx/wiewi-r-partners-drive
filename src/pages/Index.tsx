@@ -17,6 +17,9 @@ import { SITE_URL } from "@/lib/site";
 const Index = () => {
   const siteUrl = SITE_URL;
   const pageUrl = `${siteUrl}/`;
+  // Frazy z docs/seo/frazy-kluczowe.md: „bolt/uber partner flotowy” i „kierowca Uber/Bolt”.
+  // „praca kierowca wrocław” zajmują portale z ogłoszeniami, więc jej nie gonimy.
+  const title = "Partner flotowy Uber i Bolt Wrocław — praca kierowcy | Wiewiór Partners";
   const description =
     "Praca kierowcy Uber, Bolt i FreeNow we Wrocławiu. Oficjalny partner flotowy: auto bez kaucji, paliwo i ubezpieczenie w cenie, do 60% obrotu. Start od zaraz!";
 
@@ -118,13 +121,14 @@ const Index = () => {
       currency: "PLN",
       value: {
         "@type": "QuantitativeValue",
-        minValue: 4000,
-        maxValue: 8000,
+        minValue: 3500,
+        maxValue: 10000,
         unitText: "MONTH",
       },
     },
     skills: "Prawo jazdy kat. B",
-    qualifications: "Prawo jazdy kat. B (wystarczy — brak doświadczenia w porządku)",
+    qualifications:
+      "Ukończone 18 lat, polskie prawo jazdy kat. B, zaświadczenie o niekaralności, badania lekarskie i psychologiczne. Doświadczenie nie jest wymagane.",
     responsibilities:
       "Przewóz pasażerów na platformach Uber, Bolt, FreeNow we Wrocławiu i okolicach.",
     jobBenefits:
@@ -150,22 +154,22 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Praca kierowca Uber Bolt FreeNow Wrocław — Wiewiór Partners</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
-        <meta property="og:title" content="Praca kierowca Uber Bolt FreeNow Wrocław — Wiewiór Partners" />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content="Dołącz do Wiewiór Partners — oficjalnego partnera flotowego Uber, Bolt i FreeNow we Wrocławiu. Firmowe auto, paliwo i do 60% obrotu. Zacznij zarabiać od zaraz!" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Wiewiór Partners — Praca kierowca Uber Bolt FreeNow Wrocław" />
+        <meta property="og:image:alt" content="Wiewiór Partners — partner flotowy Uber, Bolt i FreeNow we Wrocławiu" />
         <meta property="og:locale" content="pl_PL" />
         <meta property="og:site_name" content="Wiewiór Partners" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Praca kierowca Uber Bolt FreeNow Wrocław — Wiewiór Partners" />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content="Dołącz do Wiewiór Partners — firmowe auto, paliwo i do 60% obrotu. Zacznij zarabiać jako kierowca we Wrocławiu!" />
         <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
         <script type="application/ld+json">{JSON.stringify(schemaWebSite)}</script>
