@@ -21,11 +21,11 @@ const faqs = [
   },
   {
     q: "Jak szybko mogę zacząć pracę jako kierowca Bolt we Wrocławiu?",
-    a: "Nawet w 48 godzin od pierwszego kontaktu. Pomagamy z formalnościami i dostarczamy auto gotowe do jazdy.",
+    a: "Nawet od zaraz od pierwszego kontaktu. Pomagamy z formalnościami i dostarczamy auto gotowe do jazdy.",
   },
   {
     q: "Czy mogę jeździć własnym autem na platformach Uber lub Bolt?",
-    a: "Tak! Oferujemy współpracę zarówno na naszych autach (Toyota Corolla), jak i na Twoim własnym samochodzie — z jeszcze lepszymi warunkami rozliczenia.",
+    a: "Tak! Oferujemy współpracę zarówno na naszych autach, jak i na Twoim własnym samochodzie — z jeszcze lepszymi warunkami rozliczenia.",
   },
   {
     q: "Czy zatrudniacie cudzoziemców — kierowców Uber we Wrocławiu?",

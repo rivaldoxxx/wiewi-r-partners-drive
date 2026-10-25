@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "500+", label: "Aktywnych kierowców" },
-  { value: "48h", label: "Start współpracy" },
-  { value: "60%", label: "Obrotu dla Ciebie" },
+  { value: "100+", label: "Kierowców nam zaufało" },
+  { value: "Od zaraz", label: "Start współpracy" },
+  { value: "do 60%", label: "Obrotu dla Ciebie" },
   { value: "24/7", label: "Wsparcie techniczne" },
 ];
 

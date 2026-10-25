@@ -79,7 +79,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-6 sm:mb-8 leading-relaxed"
           >
-            Dołącz do Wiewiór Partners — otrzymaj firmowe auto, paliwo, ubezpieczenie i zarabiaj nawet do 60% obrotu. Bez kaucji, bez ukrytych kosztów. Start w 48h.
+            Dołącz do Wiewiór Partners — otrzymaj firmowe auto, paliwo, ubezpieczenie i zarabiaj nawet do 60% obrotu. Bez kaucji, bez ukrytych kosztów. Startujesz od zaraz!
           </motion.p>
 
           <motion.div

@@ -20,7 +20,7 @@ const steps = [
     icon: CarFront,
     step: "03",
     title: "Odbierz auto i zarabiaj",
-    desc: "Dostajesz gotowe do jazdy auto i ruszasz na trasę. Nawet w 48 godzin!",
+    desc: "Odbierasz gotowe auto i ruszasz na trasę. Masz już badania? Startujesz od zaraz!",
   },
 ];
 

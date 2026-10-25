@@ -5,15 +5,15 @@ import {
 } from "lucide-react";
 
 const benefits = [
-  { icon: Car, title: "Firmowe auto", desc: "Toyota Corolla z pełnym wyposażeniem — bez kaucji." },
+  { icon: Car, title: "Firmowe auto", desc: "Nowoczesny samochód z pełnym wyposażeniem — bez kaucji." },
   { icon: Fuel, title: "Paliwo w cenie", desc: "Nie płacisz za paliwo — to nasz koszt." },
   { icon: Shield, title: "Ubezpieczenie", desc: "Pełne OC/AC i NNW po stronie firmy." },
   { icon: Wrench, title: "Serwis i naprawy", desc: "Wszystkie koszty eksploatacji pokrywamy my." },
   { icon: Wallet, title: "Do 60% obrotu", desc: "Atrakcyjne rozliczenie — zarabiasz więcej." },
   { icon: Calendar, title: "Elastyczny grafik", desc: "Pracujesz kiedy chcesz, ile chcesz." },
   { icon: Clock, title: "Tygodniowe wypłaty", desc: "Przejrzysty system — pieniądze co tydzień." },
-  { icon: FileCheck, title: "Legalne zatrudnienie", desc: "Umowa, formalności i badania — załatwiamy." },
-  { icon: HeartHandshake, title: "Wsparcie 24/7", desc: "Zawsze masz do kogo zadzwonić." },
+  { icon: FileCheck, title: "Jasne zasady współpracy", desc: "Umowa, formalności i badania — załatwiamy." },
+  { icon: HeartHandshake, title: "Bonusy", desc: "Cotygodniowy bonus — ponad Twój udział w obrocie." },
 ];
 
 const containerVariants = {
