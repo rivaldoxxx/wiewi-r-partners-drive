@@ -70,6 +70,7 @@ const JakZostacKierowca = () => (
     description="Jak zostać kierowcą Bolta i Ubera we Wrocławiu? Wymagania, dokumenty, koszt badań i 5 kroków do startu. Pomagamy we wszystkim i zwracamy koszty badań."
     breadcrumb="Jak zostać kierowcą Bolt i Uber"
     eyebrow="Poradnik · Wrocław"
+    updated="2026-10-25"
     heading={<>Jak zostać kierowcą Bolt i Uber <span className="text-gradient">we Wrocławiu</span></>}
     lead={
       <p>

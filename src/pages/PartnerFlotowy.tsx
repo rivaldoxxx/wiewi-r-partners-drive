@@ -88,6 +88,7 @@ const PartnerFlotowy = () => (
     description="Czym jest partner flotowy Uber i Bolt i jak go wybrać? Wiewiór Partners z Wrocławia: wypłaty co tydzień, auto bez kaucji albo jazda własnym autem."
     breadcrumb="Partner flotowy we Wrocławiu"
     eyebrow="Uber · Bolt · FreeNow"
+    updated="2026-10-25"
     heading={<>Partner flotowy Uber i Bolt <span className="text-gradient">we Wrocławiu</span></>}
     lead={
       <p>

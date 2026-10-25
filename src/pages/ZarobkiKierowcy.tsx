@@ -55,6 +55,7 @@ const ZarobkiKierowcy = () => (
     description="Ile zarabia kierowca Bolta i Ubera we Wrocławiu? Nasi kierowcy: od ok. 3500 do 10 000 zł miesięcznie. Sprawdź, od czego zależą zarobki."
     breadcrumb="Zarobki kierowcy Uber i Bolt"
     eyebrow="Zarobki · Wrocław"
+    updated="2026-10-25"
     heading={<>Ile zarabia kierowca Uber i Bolt <span className="text-gradient">we Wrocławiu?</span></>}
     lead={
       <p>

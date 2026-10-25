@@ -17,6 +17,8 @@ interface SubpageLayoutProps {
   /** Nazwa strony w ścieżce „Strona główna / …” (widocznej i w BreadcrumbList). */
   breadcrumb: string;
   eyebrow: string;
+  /** Data ostatniej zmiany treści (RRRR-MM-DD): widoczna na stronie i jako dateModified w schema. */
+  updated: string;
   heading: ReactNode;
   lead: ReactNode;
   faqHeading: string;
@@ -24,10 +26,16 @@ interface SubpageLayoutProps {
   children: ReactNode;
 }
 
+// Strefa UTC, żeby prerendering i przeglądarka w innej strefie pokazały ten sam dzień (inaczej błąd hydracji).
+const formatUpdated = (date: string) =>
+  new Intl.DateTimeFormat("pl-PL", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(
+    new Date(date),
+  );
+
 // Wspólny układ podstron-poradników: meta i JSON-LD, nagłówek z CTA, treść strony,
 // FAQ, linki do pozostałych poradników i końcowe CTA.
 const SubpageLayout = ({
-  path, title, description, breadcrumb, eyebrow, heading, lead, faqHeading, faqs, children,
+  path, title, description, breadcrumb, eyebrow, updated, heading, lead, faqHeading, faqs, children,
 }: SubpageLayoutProps) => {
   const pageUrl = `${SITE_URL}${path}`;
   const relatedPages = GUIDE_PAGES.filter((page) => page.path !== path);
@@ -39,6 +47,7 @@ const SubpageLayout = ({
     description,
     url: pageUrl,
     inLanguage: "pl-PL",
+    dateModified: updated,
     about: { "@id": `${SITE_URL}/#organization` },
   };
 
@@ -87,7 +96,10 @@ const SubpageLayout = ({
             <span className="text-primary text-sm font-semibold uppercase tracking-widest mb-3 block">
               {eyebrow}
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-4xl">{heading}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-3 max-w-4xl">{heading}</h1>
+            <p className="text-xs text-muted-foreground mb-6">
+              Zaktualizowano: <time dateTime={updated}>{formatUpdated(updated)}</time>
+            </p>
             <div className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">{lead}</div>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base gap-2 glow-primary">
