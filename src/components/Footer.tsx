@@ -1,4 +1,4 @@
-import { PARTNER_FLOTOWY_PATH } from "@/lib/routes";
+import { GUIDE_PAGES } from "@/lib/routes";
 
 const Footer = () => {
   return (
@@ -27,7 +27,11 @@ const Footer = () => {
             <a href="/#opinie" className="hover:text-foreground transition-colors">Opinie</a>
             <a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a>
             <a href="/#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
-            <a href={PARTNER_FLOTOWY_PATH} className="hover:text-foreground transition-colors">Partner flotowy</a>
+            {GUIDE_PAGES.map((page) => (
+              <a key={page.path} href={page.path} className="hover:text-foreground transition-colors">
+                {page.short}
+              </a>
+            ))}
           </div>
         </div>
         <div className="border-t border-border mt-8 pt-6 text-center text-xs text-muted-foreground">

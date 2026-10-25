@@ -8,7 +8,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import PartnerFlotowy from "./pages/PartnerFlotowy.tsx";
-import { PARTNER_FLOTOWY_PATH } from "./lib/routes";
+import JakZostacKierowca from "./pages/JakZostacKierowca.tsx";
+import ZarobkiKierowcy from "./pages/ZarobkiKierowcy.tsx";
+import { JAK_ZOSTAC_KIEROWCA_PATH, PARTNER_FLOTOWY_PATH, ZAROBKI_KIEROWCY_PATH } from "./lib/routes";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
     <Route path={PARTNER_FLOTOWY_PATH} element={<PartnerFlotowy />} />
+    <Route path={JAK_ZOSTAC_KIEROWCA_PATH} element={<JakZostacKierowca />} />
+    <Route path={ZAROBKI_KIEROWCY_PATH} element={<ZarobkiKierowcy />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );

@@ -5,14 +5,14 @@ Liczby to wyszukiwania miesięcznie w całej Polsce. Trudność to skala 0–100
 
 | Fraza | Szukań / mies. | Trudność | Gdzie ją wykorzystać |
 |---|---|---|---|
-| jak zostać kierowcą bolta | 880 | 0 | nowa podstrona: poradnik „Jak zostać kierowcą Bolt i Uber” |
+| jak zostać kierowcą bolta | 880 | 0 | poradnik „Jak zostać kierowcą Bolt i Uber” — **zrobione:** `/jak-zostac-kierowca-bolt-uber` |
 | bolt kierowca | 480 | 0 | strona główna i poradnik |
 | uber kierowca | 480 | 0 | strona główna i poradnik |
 | praca kierowca wrocław | 390 | 0 | strona główna (już jest w tytule) |
 | bolt partner flotowy | 260 | 7 | podstrona „Partner flotowy Uber i Bolt we Wrocławiu” — **zrobione:** `/partner-flotowy-wroclaw` |
 | uber partner flotowy | 140 | 10 | to samo |
 | kierowca bolt wymagania | 140 | 0 | poradnik i FAQ |
-| kierowca bolt zarobki | 140 | 0 | podstrona o zarobkach |
+| kierowca bolt zarobki | 140 | 0 | podstrona o zarobkach — **zrobione:** `/zarobki-kierowcy-uber-bolt` (brakuje przykładów tygodniówek od właściciela) |
 | kierowca ubera | 140 | 3 | poradnik |
 | uber jak zacząć | 110 | 13 | poradnik |
 | uber praca opinie | 110 | 0 | opinie (tu pomoże profil w Google Maps) |
@@ -52,5 +52,6 @@ Na górze każdej z czterech fraz Google pokazuje swoją odpowiedź AI (AI Overv
 | Badanie lekarskie | maks. 200 zł | rozporządzenie MZ, [Dz.U. 2014 poz. 949](https://eli.gov.pl/api/acts/DU/2014/949/text.html) |
 | Badanie psychologiczne | maks. 150 zł (ministerstwo planuje podwyżkę do 200 zł) | [odpowiedź MZ z 27.03.2026](https://bip.brpo.gov.pl/sites/default/files/2026-03/Odpowiedz_MZ_transport_psychologia_badania_oplaty_27_03_2026.pdf), [money.pl](https://direct.money.pl/artykuly/porady/nawet-200-zl-za-obowiazkowe-badanie-kierowcy-resort-szykuje-zmiany) |
 | Zarobki | od ok. 3500 do 10 000 zł miesięcznie | dane od właściciela |
+| Mediana Bolta | 2 804 zł tygodniowo, Polska, 1–31.08.2026; lokalnie może być niższa | [bolt.eu, strona dla kierowców](https://bolt.eu/pl-pl/driver/) |
 
 Konkurenci zauważeni w wynikach: mbpartners.pl, twojaflota.com.pl, abgrupa.com, orixx.taxi (dwa ostatnie płacą za reklamy we Wrocławiu; AB Group ma reklamę także po rosyjsku i ukraińsku). Na OLX jest ogłoszenie konkurenta: „60% obrotu + 1000 zł premii, auto za 0 zł, bez kaucji”.

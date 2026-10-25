@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FaqList from "@/components/FaqList";
 import { faqs } from "@/data/faqs";
-import { PARTNER_FLOTOWY_PATH } from "@/lib/routes";
+import { GUIDE_PAGES } from "@/lib/routes";
 
 const FAQSection = () => {
   return (
@@ -24,13 +24,16 @@ const FAQSection = () => {
 
         <FaqList items={faqs} />
 
-        <a
-          href={PARTNER_FLOTOWY_PATH}
-          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-        >
-          Czym jest partner flotowy i jak go wybrać?
-          <ArrowRight className="w-4 h-4" />
-        </a>
+        <ul className="mt-8 space-y-2">
+          {GUIDE_PAGES.map((page) => (
+            <li key={page.path}>
+              <a href={page.path} className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                {page.label}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import type { HelmetServerState } from "react-helmet-async";
 import { AppRoutes, Providers } from "./App.tsx";
-import { PARTNER_FLOTOWY_PATH } from "./lib/routes";
+import { GUIDE_PAGES } from "./lib/routes";
 
 export { SITE_URL } from "./lib/site";
 
@@ -10,7 +10,7 @@ export { SITE_URL } from "./lib/site";
 // Pliki .html serwujemy bez rozszerzenia dzięki "cleanUrls" w vercel.json.
 export const PAGES = [
   { url: "/", file: "index.html", sitemap: true },
-  { url: PARTNER_FLOTOWY_PATH, file: `${PARTNER_FLOTOWY_PATH.slice(1)}.html`, sitemap: true },
+  ...GUIDE_PAGES.map((page) => ({ url: page.path, file: `${page.path.slice(1)}.html`, sitemap: true })),
   { url: "/404", file: "404.html", sitemap: false },
 ];
 

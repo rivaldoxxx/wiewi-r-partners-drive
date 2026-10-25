@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { PhoneCall, FileText, CarFront } from "lucide-react";
+import { PhoneCall, FileText, CarFront, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StepsTimeline } from "@/components/ui/steps";
+import { JAK_ZOSTAC_KIEROWCA_PATH } from "@/lib/routes";
 
 const steps = [
   {
@@ -59,6 +60,13 @@ const HowItWorks = () => {
           <Button asChild size="lg" className="text-base glow-primary">
             <a href="#kontakt">Zacznij teraz — to proste!</a>
           </Button>
+          <a
+            href={JAK_ZOSTAC_KIEROWCA_PATH}
+            className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-primary hover:underline"
+          >
+            Pełny poradnik: wymagania, dokumenty i koszt badań
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
