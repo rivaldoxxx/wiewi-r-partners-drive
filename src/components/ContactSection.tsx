@@ -1,8 +1,67 @@
+import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const WHATSAPP_NUMBER = "48665660610";
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
+const CAR_OPTIONS = ["Nie — chcę auto firmowe", "Tak — mam własne auto"];
+
+type FormStatus = "idle" | "sending" | "sent" | "whatsapp" | "error";
+
+const STATUS_MESSAGES: Partial<Record<FormStatus, string>> = {
+  sent: "Dziękujemy! Zgłoszenie dotarło — oddzwonimy w ciągu kilku godzin.",
+  whatsapp: "Otworzyliśmy WhatsApp z gotową wiadomością — wystarczy ją wysłać.",
+  error: "Nie udało się wysłać zgłoszenia. Zadzwoń: +48 665 660 610 albo napisz na WhatsApp.",
+};
+
+// Z kluczem Web3Forms zgłoszenie idzie e-mailem. Bez klucza otwieramy WhatsApp z gotową wiadomością,
+// żeby żadne zgłoszenie nie przepadło.
+const submitApplication = async (form: HTMLFormElement): Promise<FormStatus> => {
+  const data = new FormData(form);
+
+  if (!WEB3FORMS_KEY) {
+    const car = String(data.get("car") ?? "");
+    const message = String(data.get("message") ?? "").trim();
+    const text = [
+      "Dzień dobry, chcę zostać kierowcą.",
+      `Imię i nazwisko: ${data.get("name")}`,
+      `Telefon: ${data.get("phone")}`,
+      car && `Własne auto: ${car}`,
+      message && `Wiadomość: ${message}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    return "whatsapp";
+  }
+
+  data.append("access_key", WEB3FORMS_KEY);
+  data.append("subject", "Nowe zgłoszenie kierowcy ze strony");
+  data.append("from_name", "Strona Wiewiór Partners");
+  const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+  const result = await response.json().catch(() => null);
+  if (!response.ok || !result?.success) throw new Error("Web3Forms odrzucił zgłoszenie");
+  return "sent";
+};
+
 const ContactSection = () => {
+  const [status, setStatus] = useState<FormStatus>("idle");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("sending");
+    try {
+      const next = await submitApplication(form);
+      setStatus(next);
+      if (next === "sent") form.reset();
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="kontakt" className="section-padding bg-secondary/20">
       <div className="container">
@@ -19,7 +78,7 @@ const ContactSection = () => {
             Gotowy, żeby <span className="text-gradient">zacząć zarabiać?</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
-            Skontaktuj się z nami — odpowiemy w ciągu kilku godzin. Pomożemy Ci ruszyć w trasę nawet w 48h.
+            Skontaktuj się z nami — odpowiemy w ciągu kilku godzin. Pomożemy Ci ruszyć w trasę od zaraz.
           </p>
         </motion.div>
 
@@ -32,7 +91,9 @@ const ContactSection = () => {
             className="p-6 md:p-8 rounded-2xl bg-card border border-border card-glow"
           >
             <h3 className="font-heading text-xl font-bold mb-6">Wyślij zgłoszenie</h3>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              {/* Pułapka na boty: ludzie tego pola nie widzą, Web3Forms odrzuca zgłoszenia z zaznaczonym. */}
+              <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
                   Imię i nazwisko
@@ -40,6 +101,9 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
+                  autoComplete="name"
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   placeholder="Jan Kowalski"
                 />
@@ -51,6 +115,9 @@ const ContactSection = () => {
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
+                  required
+                  autoComplete="tel"
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   placeholder="+48 000 000 000"
                 />
@@ -61,11 +128,15 @@ const ContactSection = () => {
                 </label>
                 <select
                   id="car"
+                  name="car"
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                 >
                   <option value="">Wybierz opcję</option>
-                  <option value="no">Nie — chcę auto firmowe</option>
-                  <option value="yes">Tak — mam własne auto</option>
+                  {CAR_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>
@@ -74,17 +145,27 @@ const ContactSection = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={3}
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
                   placeholder="Napisz, jeśli masz pytania..."
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full text-base glow-primary">
-                Wyślij zgłoszenie
+              <Button type="submit" size="lg" className="w-full text-base glow-primary" disabled={status === "sending"}>
+                {status === "sending" ? "Wysyłanie…" : "Wyślij zgłoszenie"}
               </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Odpowiadamy w ciągu kilku godzin. Twoje dane są bezpieczne.
-              </p>
+              {STATUS_MESSAGES[status] ? (
+                <p
+                  role={status === "error" ? "alert" : "status"}
+                  className={`text-sm text-center ${status === "error" ? "text-destructive" : "text-primary"}`}
+                >
+                  {STATUS_MESSAGES[status]}
+                </p>
+              ) : (
+                <p className="text-xs text-muted-foreground text-center">
+                  Odpowiadamy w ciągu kilku godzin. Twoje dane są bezpieczne.
+                </p>
+              )}
             </form>
           </motion.div>
 
@@ -136,6 +217,7 @@ const ContactSection = () => {
                   <p>Wiewiór Partners</p>
                   <p>ul. Muchoborska 14/204A</p>
                   <p>54-424 Wrocław</p>
+                  <p className="mt-2">Pon–pt 8:00–18:00, sob 9:00–14:00</p>
                 </div>
               </div>
             </div>
